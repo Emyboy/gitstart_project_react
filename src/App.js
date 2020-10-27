@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import '@material/react-material-icon/dist/material-icon.css';
-import io from 'socket.io-client';
+import SocketClient from 'socket.io-client';
+import io from 'socket.io';
 
-const socket = io(process.env.REACT_APP_API_URL);
+const socket = SocketClient(process.env.REACT_APP_API_URL);
 
 function App() {
   const [chat, setChat] = useState([]);
@@ -21,10 +22,12 @@ function App() {
   const handleSubmit = () => {
     if(name && text){
       console.log('sent')
-      socket.emit('sendMessage', {
+      const data = {
         message: text,
-        username: name
-      });
+        username: name,
+      }
+      socket.emit('sendMessage', data);
+      setChat([...chat, data])
       setText('')
     }else {
       alert('fill out the form')
@@ -34,9 +37,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className='container mt-3'>
-        <input placeholder='name' className='w-100 mb-2' value={name} onChange={e => setName(e.target.value)} /><br />
-        <textarea placeholder='message' className='w-100' value={text} onChange={e => setText(e.target.value)} /><br />
+      <div className='container mt-3 mb-4'>
+        <input placeholder='name' className='w-100 mb-2 p-2' value={name} onChange={e => setName(e.target.value)} /><br />
+        <textarea rows='5' placeholder='message' className='w-100 p-2' value={text} onChange={e => setText(e.target.value)} /><br />
         <button className='btn btn-primary w-100' onClick={() => handleSubmit()}>Send Message</button>
         <hr />
         <ul class="list-group">

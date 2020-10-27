@@ -6,8 +6,8 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg container shadow header ">
 
             <FiAlignLeft className='grow' />
-            <h2 className='ml-3'>Finder</h2>
-            {/* <input/> */}
+            {/* <h2 className='ml-3'>Finder</h2> */}
+            <input/>
             <FiSearch className='grow' />
         </nav>
     )

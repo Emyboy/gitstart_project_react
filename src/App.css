@@ -1,3 +1,8 @@
+body{
+  background-color: #e4e4e4;
+}
+
+
 *{
   font-family: 'Roboto Condensed', sans-serif;
   padding: 0px;
@@ -9,3 +14,9 @@ span, p, a, i{
   font-family: 'Raleway', sans-serif;
 }
 
+
+button{
+  background-color: #27aae1 !important;
+  border: none !important;
+  color: black !important;
+}

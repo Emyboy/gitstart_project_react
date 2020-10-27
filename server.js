@@ -19,9 +19,9 @@ app.get('*', (req, res) => {
 io.on('connection', (socket) => {
     console.log("Socket connected");
 
-    socket.on('sendMessage', message => {
+    socket.on('sendMessage', data => {
         // console.log('Message: ', message);
-        socket.emit('sendMessage', message)
+        socket.broadcast.emit('sendMessage', data)
     });
 });
 
