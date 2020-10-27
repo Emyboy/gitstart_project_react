@@ -3,7 +3,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg container shadow header ">
+        <nav className="pt-3 pb-3 container shadow header ">
 
             <FiAlignLeft className='grow' />
             {/* <h2 className='ml-3'>Finder</h2> */}

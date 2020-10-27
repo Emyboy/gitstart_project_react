@@ -9,6 +9,12 @@
     /* color: white; */
 }
 
+.header input {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .header svg:hover{
     cursor: pointer;
 }
