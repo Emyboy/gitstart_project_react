@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import '@material/react-material-icon/dist/material-icon.css';
+import io from 'socket.io-client';
+
+const socket = io(process.env.REACT_APP_API_URL);
 
 function App() {
+  const [chat, setChat] = useState([]);
+  const [text, setText] = useState(null);
+  const [name, setName] = useState(null);
+  
+  useEffect(() => {
+    socket.on('sendMessage', message => {
+      console.log('message -->', message);
+      setChat([...chat, message])
+    })
+  })
+
+  const handleSubmit = () => {
+    if(name && text){
+      console.log('sent')
+      socket.emit('sendMessage', {
+        message: text,
+        username: name
+      });
+      setText('')
+    }else {
+      alert('fill out the form')
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className='container mt-3'>
+        <input placeholder='name' className='w-100 mb-2' value={name} onChange={e => setName(e.target.value)} /><br />
+        <textarea placeholder='message' className='w-100' value={text} onChange={e => setText(e.target.value)} /><br />
+        <button className='btn btn-primary w-100' onClick={() => handleSubmit()}>Send Message</button>
+        <hr />
+        <ul class="list-group">
+          {
+            chat.map((val, i) => {
+              return <li className="list-group-item " key={i}>
+                <b>Username: </b><span>{val.username}</span>
+                <p>{val.message}</p>
+                </li>
+            })
+          }
+        </ul>
+      </div>
     </div>
   );
 }
