@@ -1,6 +1,6 @@
 import React from 'react';
-import Btn from '../Btn/Btn';
-import TextInput from '../TextInput/TextInput';
+import Btn from '../../components/Btn/Btn';
+import TextInput from '../../components/TextInput/TextInput';
 
 
 export default () => {
@@ -8,13 +8,13 @@ export default () => {
         <div id="lp-register">
             <div className="container wrapper">
                 <div className="row">
-                    <div className="col-sm-5">
+                    {/* <div className="col-sm-5">
                         <div className="intro-texts">
                             <h1 className="text-white">Make Cool Friends !!!</h1>
                             <p>Friend Finder is a social network template that can be used to connect people. The template offers Landing pages, News Feed, Image/Video Feed, Chat Box, Timeline and lot more. <br /> <br />Why are you waiting for? Buy it now.</p>
                             <button className="btn btn-primary">Learn More</button>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="col-sm-6 col-sm-offset-1">
                         <div className="reg-form-container">
 
