@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import '@material/react-material-icon/dist/material-icon.css';
 import SocketClient from 'socket.io-client';
-import io from 'socket.io';
+// import io from 'socket.io';
 
 const socket = SocketClient(process.env.REACT_APP_API_URL);
 
