@@ -1,17 +1,16 @@
-import { FiAlignLeft, FiSearch } from "react-icons/fi";
+import React from 'react';
 import './Header.css';
+import { FiAlignLeft, FiSearch } from 'react-icons/fi'
 
-const Header = () => {
+export default () => {
     return (
-        <nav className="pt-3 pb-3 container shadow header ">
-
-            <FiAlignLeft className='grow' />
-            {/* <h2 className='ml-3'>Finder</h2> */}
-            <input/>
-            <FiSearch className='grow' />
+        <nav className="navbar navbar-default navbar-fixed-top menu header">
+            <div className="container">
+                <FiAlignLeft />
+                <input />
+                <FiSearch />
+            </div>
         </nav>
     )
 }
-
-export default Header;
 

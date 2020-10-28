@@ -1,20 +1,12 @@
 .header {
+    background-color: #27aae1 !important;
+}
+.header .container input {
     display: flex;
-    justify-content: space-between;
-    background-color: #27aae1;
+    justify-content: space-evenly;
+    width: 80%;
 }
 
 .header svg {
-    font-size: 30px;
-    /* color: white; */
-}
-
-.header input {
-    width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.header svg:hover{
-    cursor: pointer;
+    font-size: 20px;
 }
