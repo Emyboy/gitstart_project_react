@@ -1,10 +1,11 @@
 import React from 'react';
-import './css/bootstrap.min.css';
-import './css/style.css'; 
+import './assets/css/style.css';
+
 import './App.css';
-import 'react-activity/dist/react-activity.css';
+// import './App.css';
 import Header from './components/Header/Header';
-import Singup from './components/Signup/Singup';
+import Singup from './pages/Signup/Singup';
+import Timeline from './pages/Timeline/Timesline';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <Singup />
+      {/* <Timeline /> */}
     </div>
   );
 }

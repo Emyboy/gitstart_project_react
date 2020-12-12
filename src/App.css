@@ -1,7 +1,9 @@
 body{
-  background-color: #e4e4e4;
+  background-color: #dfe2e7 !important;
 }
-
+.bg-app{
+  background: linear-gradient(71deg, #27aae1, #2293c4) !important;
+}
 
 *{
   font-family: 'Roboto Condensed', sans-serif;
@@ -17,7 +19,6 @@ span, p, a, i{
 svg {
   color: #09232e;
 }
-
 /* button{
   background-color: #27aae1 !important;
   border: none !important;

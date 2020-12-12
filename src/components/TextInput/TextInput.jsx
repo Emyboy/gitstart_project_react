@@ -1,6 +1,8 @@
 import React from 'react';
+import { Form } from 'react-bootstrap'
+// import { func, string, object } from 'prop-types'
 
-export default ({
+const TextInput = ({
     className,
     placeholder,
     onChange,
@@ -9,13 +11,35 @@ export default ({
     type,
     name,
     title,
-    label
+    value,
+    required,
+    label,
+    maxlength,
+    error
 }) => {
     return (
-        <>
-            <label for="firstname" className="sr-only">{label}</label>
-            <input id={id} className={"form-control input-group-lg" + className} type={type} name={name} title={title} placeholder={placeholder} />
-        </>
+        <Form.Group controlId="formBasicEmail">
+            <Form.Label>{label}</Form.Label>
+            <Form.Control
+                type={type}
+                placeholder={placeholder}
+                id={id}
+                name={name}
+                disabled={disabled}
+                required={required}
+                onChange={e => onChange(e)}
+                value={value}
+                className={className}
+            />
+            <Form.Text className="text-danger">
+                {error}
+            </Form.Text>
+        </Form.Group>
     )
 }
 
+// TextInput.propType = {
+//     onChange: func
+// }
+
+export default TextInput;

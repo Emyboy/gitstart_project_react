@@ -1,0 +1,7 @@
+.btn_{
+    background: linear-gradient(71deg, #27aae1, #2293c4) !important;
+}
+.btn_:hover{
+    background: linear-gradient(279deg, #27aae1, #2293c4) !important;
+    box-shadow: 0 5px 15px #4fc7fa81 !important;
+}
