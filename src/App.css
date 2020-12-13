@@ -11,6 +11,14 @@ body{
   margin: 0px;
 }
 
+.link {
+  cursor: pointer;
+}
+.active-app{
+  background: #238cb9;
+  color: white;
+}
+
 
 span, p, a, i{
   font-family: 'Raleway', sans-serif;

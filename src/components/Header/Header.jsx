@@ -1,15 +1,27 @@
 import React from 'react';
 import './Header.css';
-import { FiAlignLeft, FiSearch } from 'react-icons/fi'
+import {
+    FiHome,
+    FiSearch,
+    FiUser,
+    FiBell
+} from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 
 export default () => {
     return (
-        <nav className="navbar navbar-default navbar-fixed-top menu header pt-4 pb-4 clearfix fixed-top shadow-sm bg-app">
-            <div className="container">
-                <FiAlignLeft />
-                <input />
-                <FiSearch />
-            </div>
+        <nav className="nav header bg-app fixed-top">
+            <Link to='/' className='active-app'>
+                <FiHome />
+            </Link>
+            {/* <input /> */}
+            <Link to='/notifications'>
+                <FiBell />
+            </Link>
+            <FiSearch />
+            <Link to='/signup'>
+                <FiUser />
+            </Link>
         </nav>
     )
 }

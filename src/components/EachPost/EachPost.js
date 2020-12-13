@@ -46,9 +46,15 @@ const EachPost = () => {
             <hr />
 
             <EachReply />
-            <div className="post-comment">
+            {/* <div className="post-comment">
                 <img src="images/users/user-1.jpg" alt="" className="profile-photo-sm" />
                 <input type="text" className="form-control" placeholder="Post a comment" />
+            </div> */}
+            <div class="review_usr_dt">
+                <img src="images/left-imgs/img-1.jpg" alt="" />
+                <div class="rv1458 w-100">
+                    <input type="text" className="form-control mt-2" placeholder="Post a comment" />
+                </div>
             </div>
         </article>
     )
