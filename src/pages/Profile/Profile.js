@@ -40,13 +40,28 @@ export default function Profile() {
                                 </div>
                             </div>
                             <hr />
+                            <div style={{ display: 'flex', justifyContent: 'arround' }} className='container'>
+                                <div className='text-center'>
+                                    <h4>Following</h4>
+                                    <p>405</p>
+                                </div>
+                                <div className='text-center'>
+                                    <h4>Followers</h4>
+                                    <p>405</p>
+                                </div>
+                                <div className='text-center'>
+                                    <h4>Pots</h4>
+                                    <p>405</p>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
-                        <div className='mt-4'>
-                            <EachPost />
-                            <EachPost />
-                            <EachPost />
-                        </div>
+                    <div className='mt-4'>
+                        <EachPost />
+                        <EachPost />
+                        <EachPost />
+                    </div>
 
                 </div>
             </div>
