@@ -9,12 +9,14 @@ export default ({
     className,
     loading,
     onClick,
-    id
+    id,
+    style
 }) => {
     return (
         <Button
-            className={"btn btn-primary w-100 btn_ mt-3 "+ className}
+            className={"btn btn-primary btn_ mt-3 "+ className}
             disabled={disabled}
+            style={style}
         >
             {loading ? <Spinner color='white' /> : text}
         </Button>

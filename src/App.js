@@ -12,6 +12,7 @@ import Singup from './pages/Signup/Singup';
 import Timeline from './pages/Timeline/Timesline';
 import PageNotFound from './pages/PageNotFound';
 import Notification from './pages/Notification/Notification';
+import Profile from './pages/Profile/Profile';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                   <Route exact path="/" component={Timeline} />
                   <Route exact path="/signup" component={Singup} />
                   <Route exact path="/notifications" component={Notification} />
+                  <Route exact path="/user/:username" component={Profile} />
                   <Route component={PageNotFound} />
                   {/* <Route component={SiteUnderConts} /> */}
                 </Switch>

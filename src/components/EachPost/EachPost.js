@@ -1,16 +1,39 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import EachReply from './EachReply'
 import { FiHeart, FiMessageCircle, FiEdit2, FiTrash } from "react-icons/fi";
+import NewBadge from '../NewBadge';
+import TextArea from '../TextArea/TextArea';
+import { Link } from 'react-router-dom';
 
 
 const EachPost = () => {
+    const [liked, setLiked] = useState(false);
+
+    const handleLike = () => {
+        setLiked(true);
+        setTimeout(() => {
+            setLiked(false);
+        }, 3000);
+    }
+
     return (
         <article className="review_item mb-3 card rounded">
+            {
+                liked ? <img src='https://i.gifer.com/6ob.gif' style={{
+                    position: 'absolute',
+                    width: '80%',
+                    left: '80px',
+                    zIndex: '10',
+                    height: '450px'
+                }} /> : null
+            }
             <div className="review_usr_dt">
                 <img src="images/left-imgs/img-1.jpg" alt="" />
                 <div className="rv1458">
-                    <h4 className="tutor_name1">John Doe</h4>
+                    <Link to='/user/emyboy'>
+                        <h4 className="tutor_name1">John Doe</h4>
+                    </Link>
                     <span className="time_145">2 hour ago</span>
                 </div>
             </div>
@@ -22,7 +45,7 @@ const EachPost = () => {
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <div className="user_dt_right">
                     <ul>
-                        <li>
+                        <li onClick={() => handleLike()}>
                             <a href="#" className="lkcm152"><FiHeart size={15} /><span>1452</span></a>
                         </li>
                         <li>
@@ -46,6 +69,7 @@ const EachPost = () => {
             <hr />
 
             <EachReply />
+            <NewBadge />
             {/* <div className="post-comment">
                 <img src="images/users/user-1.jpg" alt="" className="profile-photo-sm" />
                 <input type="text" className="form-control" placeholder="Post a comment" />
@@ -53,7 +77,11 @@ const EachPost = () => {
             <div class="review_usr_dt">
                 <img src="images/left-imgs/img-1.jpg" alt="" />
                 <div class="rv1458 w-100">
-                    <input type="text" className="form-control mt-2" placeholder="Post a comment" />
+                    {/* <input type="text" className="form-control mt-2" placeholder="Post a comment" /> */}
+                    <TextArea
+                        onChange={e => { }}
+                        placeholder="Post a comment"
+                    />
                 </div>
             </div>
         </article>

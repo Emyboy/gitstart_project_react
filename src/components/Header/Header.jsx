@@ -17,6 +17,9 @@ export default () => {
             {/* <input /> */}
             <Link to='/notifications'>
                 <FiBell />
+                {/* <span className='badge badge-danger' style={{
+                    right: '80px'
+                }}>40</span> */}
             </Link>
             <FiSearch />
             <Link to='/signup'>
