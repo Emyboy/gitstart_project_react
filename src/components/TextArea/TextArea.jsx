@@ -12,6 +12,7 @@ export default function TextArea({
             className={`form-control ${className ? className : null}`}
             placeholder={placeholder}
             rows={rows}
+            style={{ fontSize: '18px' }}
         />
     )
 }

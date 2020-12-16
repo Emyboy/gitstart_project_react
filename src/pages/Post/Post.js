@@ -6,6 +6,7 @@ import { Tab, Tabs } from 'react-bootstrap';
 import EachReply from '../../components/EachPost/EachReply';
 import TextArea from '../../components/TextArea/TextArea';
 import Btn from '../../components/Btn/Btn';
+import EachUser from '../../components/EachUser/EachUser';
 
 
 export const Post = () => {
@@ -79,24 +80,32 @@ export const Post = () => {
                         <EachReply />
                         <EachReply />
                         <EachReply />
+                        <hr />
+                        <div class="review_usr_dt bg-white">
+                            <img src="images/left-imgs/img-1.jpg" alt="" />
+                            <div class="rv1458 w-100">
+                                {/* <input type="text" className="form-control mt-2" placeholder="Post a comment" /> */}
+                                <TextArea
+                                    onChange={e => { }}
+                                    placeholder="Post a comment"
+                                />
+                            </div>
+                            <Btn text='Add' className='mb-3 ml-2' />
+                        </div>
                     </Tab>
                     <Tab eventKey="likes" title="Likes">
-                        <h1>Likes</h1>
+                        <div className='container mt-4'>
+                            <EachUser />
+                            <EachUser />
+                            <EachUser />
+                            <EachUser />
+                            <EachUser />
+                        </div>
                     </Tab>
                 </Tabs>
             </div>
 
-            <div class="review_usr_dt bg-white p-3 m-1">
-                <img src="images/left-imgs/img-1.jpg" alt="" />
-                <div class="rv1458 w-100">
-                    {/* <input type="text" className="form-control mt-2" placeholder="Post a comment" /> */}
-                    <TextArea
-                        onChange={e => { }}
-                        placeholder="Post a comment"
-                    />
-                </div>
-                <Btn text='Add' className='mb-3 ml-2' />
-            </div>
+            
 
 
         </div>

@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function EachReply() {
+export default function EachReply({
+    type
+}) {
     return (
         <>
-            <div className="post-detail pl-5">
+            <div className={`post-detail ${type === 'reply' ? 'pl-5': null}`}>
                 <div className="review_item">
                     <div className="review_usr_dt">
                         <img src="images/left-imgs/img-1.jpg" alt="" />
