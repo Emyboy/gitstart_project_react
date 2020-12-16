@@ -17,8 +17,9 @@ export default ({
             className={"btn btn-primary btn_ mt-3 "+ className}
             disabled={disabled}
             style={style}
+            onClick={onClick}
         >
-            {loading ? <Spinner color='white' /> : text}
+            {loading ? <Spinner size={10} className='mt-1' color='white' /> : text}
         </Button>
     )
 }

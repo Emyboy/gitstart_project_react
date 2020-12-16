@@ -1,5 +1,6 @@
 import React from 'react';
 import './assets/css/style.css';
+import 'react-activity/dist/react-activity.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Provider } from "react-redux";
@@ -13,6 +14,7 @@ import Timeline from './pages/Timeline/Timesline';
 import PageNotFound from './pages/PageNotFound';
 import Notification from './pages/Notification/Notification';
 import Profile from './pages/Profile/Profile';
+import Post from './pages/Post/Post';
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
                   <Route exact path="/signup" component={Singup} />
                   <Route exact path="/notifications" component={Notification} />
                   <Route exact path="/user/:username" component={Profile} />
+                  <Route exact path="/post/:post_id" component={Post} />
                   <Route component={PageNotFound} />
                   {/* <Route component={SiteUnderConts} /> */}
                 </Switch>

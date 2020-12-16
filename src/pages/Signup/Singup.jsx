@@ -68,6 +68,7 @@ export default () => {
 
                                 <Btn
                                     text='Register'
+                                    className='w-100'
                                 />
                             </Form>
                                 <p className='mb-0 mt-3'>Already have an account ? <Link to='/login'>Login</Link></p>

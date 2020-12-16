@@ -5,6 +5,7 @@ import { FiHeart, FiMessageCircle, FiEdit2, FiTrash } from "react-icons/fi";
 import NewBadge from '../NewBadge';
 import TextArea from '../TextArea/TextArea';
 import { Link } from 'react-router-dom';
+import Btn from '../Btn/Btn';
 
 
 const EachPost = () => {
@@ -40,7 +41,9 @@ const EachPost = () => {
             <div className="rating-box mt-20">
                 {/* <img src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80' alt="post-image" className="img-responsive post-image" /> */}
             </div>
-            <p className="rvds10">Nam gravida elit a velit rutrum, eget dapibus ex elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
+            <Link to='/post/637'>
+                <p className="rvds10">Nam gravida elit a velit rutrum, eget dapibus ex elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
+            </Link>
             <hr />
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <div className="user_dt_right">
@@ -83,6 +86,7 @@ const EachPost = () => {
                         placeholder="Post a comment"
                     />
                 </div>
+                <Btn text='Add' className='mb-3 ml-2' />
             </div>
         </article>
     )

@@ -40,7 +40,7 @@ export default function Profile() {
                                 </div>
                             </div>
                             <hr />
-                            <div style={{ display: 'flex', justifyContent: 'arround' }} className='container'>
+                            <div style={{ display: 'flex', justifyContent: 'space-evenly' }} className='container'>
                                 <div className='text-center'>
                                     <h4>Following</h4>
                                     <p>405</p>
@@ -57,6 +57,8 @@ export default function Profile() {
                             </div>
                         </div>
                     </div>
+                    <hr />
+                    <h3>Timeline</h3>
                     <div className='mt-4'>
                         <EachPost />
                         <EachPost />

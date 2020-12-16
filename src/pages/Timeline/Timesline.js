@@ -1,3 +1,4 @@
+import CreatePostButton from '../../components/CreatePostButton'
 import EachPost from '../../components/EachPost/EachPost'
 
 
@@ -18,6 +19,7 @@ const Timeline = () => {
                     <EachPost />
                 </div>
            </div>
+           <CreatePostButton />
         </div>
     )
 }
