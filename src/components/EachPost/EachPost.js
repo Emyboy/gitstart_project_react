@@ -6,9 +6,12 @@ import NewBadge from '../NewBadge';
 import TextArea from '../TextArea/TextArea';
 import { Link } from 'react-router-dom';
 import Btn from '../Btn/Btn';
+import { object } from 'prop-types';
 
-
-const EachPost = () => {
+const EachPost = ({
+    data,
+    auth
+}) => {
     const [liked, setLiked] = useState(false);
 
     const handleLike = () => {
@@ -27,7 +30,7 @@ const EachPost = () => {
                     left: '80px',
                     zIndex: '10',
                     height: '450px'
-                }} /> : null
+                }} alt='' /> : null
             }
             <div className="review_usr_dt">
                 <img src="images/left-imgs/img-1.jpg" alt="" />
@@ -77,9 +80,9 @@ const EachPost = () => {
                 <img src="images/users/user-1.jpg" alt="" className="profile-photo-sm" />
                 <input type="text" className="form-control" placeholder="Post a comment" />
             </div> */}
-            <div class="review_usr_dt">
+            <div className="review_usr_dt">
                 <img src="images/left-imgs/img-1.jpg" alt="" />
-                <div class="rv1458 w-100">
+                <div className="rv1458 w-100">
                     {/* <input type="text" className="form-control mt-2" placeholder="Post a comment" /> */}
                     <TextArea
                         onChange={e => { }}
@@ -93,12 +96,19 @@ const EachPost = () => {
 }
 
 const mapStateToProps = (state) => ({
-
+    auth: state.auth
 })
 
 const mapDispatchToProps = {
 
 }
 
-export default EachPost;
+EachPost.propTypes = {
+    data: object.isRequired
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(EachPost);
 // export default connect(mapStateToProps, mapDispatchToProps)(EachPost)

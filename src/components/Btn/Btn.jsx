@@ -1,9 +1,10 @@
 import React from 'react';
 import { Spinner } from 'react-activity';
 import { Button } from 'react-bootstrap'
+import { string, func, object, bool } from 'prop-types';
 import './Btn.css';
 
-export default ({
+const Btn = ({
     text,
     disabled,
     className,
@@ -23,3 +24,15 @@ export default ({
         </Button>
     )
 }
+
+Btn.propTypes = {
+    text: string.isRequired,
+    disabled: bool,
+    className: string,
+    loading: bool,
+    onClick: func,
+    id: string,
+    style: object
+}
+
+export default Btn;

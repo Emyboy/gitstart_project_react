@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Btn from '../Btn/Btn'
+import { object } from 'prop-types';
 
-export default function EachUser() {
+export default function EachUser({
+    data
+}) {
     return (
         <>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -22,4 +25,8 @@ export default function EachUser() {
             <hr />
         </>
     )
+}
+
+EachUser.propTypes = {
+    data: object
 }

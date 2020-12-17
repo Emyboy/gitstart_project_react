@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form } from 'react-bootstrap';
+import { string, func, array } from 'prop-types';
 
 export default function DropDown({
     label,
@@ -16,4 +17,10 @@ export default function DropDown({
             </Form.Control>
         </Form.Group>
     )
+}
+
+DropDown.propTypes = {
+    label: string,
+    onChange: func.isRequired,
+    option: array.isRequired
 }

@@ -1,7 +1,7 @@
 import React from 'react';
+import { string, bool, array } from 'prop-types';
 
-
-export default  ({
+const DropdownSelect = ({
     label,
     disabled,
     option,
@@ -20,5 +20,13 @@ export default  ({
             </select>
         </>
     )
+};
+
+DropdownSelect.propTypes = {
+    label: string,
+    disabled: bool,
+    option: array.isRequired
 }
+
+export default DropdownSelect;
 

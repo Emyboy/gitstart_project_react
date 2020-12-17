@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Btn from '../../components/Btn/Btn';
 import TextInput from '../../components/TextInput/TextInput';
-import { Form, Button } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 import DropDown from '../../components/DropDown/DropDown';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -22,6 +22,17 @@ export default connect(
     auth,
     Signup
 }) => {
+    const [data, setData] = useState({
+        firstName: null,
+        lastName: null,
+        email: null,
+        username: null,
+        password: null,
+        gender: 'male',
+    })
+    const handleSubmit = () => {
+        Signup(data);
+    }
     return (
         <div style={{ background: 'inherit' }}>
             <div className="container">
@@ -36,21 +47,21 @@ export default connect(
                                     name='firstName'
                                     placeholder='First Name'
                                     type='text'
-                                    onChange={() => { }}
+                                    onChange={e => setData({ ...data, firstName: e.target.value })}
                                 />
                                 <TextInput
                                     label="Lat Name"
                                     name='lastName'
                                     placeholder='Last Name'
                                     type='text'
-                                    onChange={() => { }}
+                                    onChange={e => setData({ ...data, lastName: e.target.value })}
                                 />
                                 <TextInput
                                     label="Username"
                                     name='username'
                                     placeholder='Username'
                                     type='text'
-                                    onChange={() => { }}
+                                    onChange={e => setData({ ...data, username: e.target.value })}
                                 />
 
                                 <TextInput
@@ -58,13 +69,13 @@ export default connect(
                                     placeholder='Email'
                                     type='email'
                                     name='email'
-                                    onChange={() => { }}
+                                    onChange={e => setData({ ...data, email: e.target.value })}
                                 />
 
                                 <DropDown
                                     label='Gender'
                                     options={['male', 'female']}
-                                    onChange={e => { }}
+                                    onChange={e => setData({ ...data, gender: e.target.value })}
                                 />
 
                                 <TextInput
@@ -72,17 +83,17 @@ export default connect(
                                     placeholder='Password'
                                     type='password'
                                     name='password'
-                                    onChange={() => { }}
+                                    onChange={e => setData({ ...data, password: e.target.value })}
                                 />
 
                                 <Btn
                                     text='Register'
                                     className='w-100'
                                     loading={auth.authLoading}
-                                    onClick={Signup}
+                                    onClick={handleSubmit}
                                 />
                             </Form>
-                                <p className='mb-0 mt-3'>Already have an account ? <Link to='/login'>Login</Link></p>
+                            <p className='mb-0 mt-3'>Already have an account ? <Link to='/login'>Login</Link></p>
                         </div>
                     </div>
                 </div>

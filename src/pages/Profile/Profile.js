@@ -16,11 +16,11 @@ export default function Profile() {
                 <div className='col-lg-7'>
                     <div className='card'>
                         <div className='card-body'>
-                            <div class="review_usr_dt">
+                            <div className="review_usr_dt">
                                 <img src="images/left-imgs/img-1.jpg" alt="" />
-                                <div class="rv1458">
-                                    <h4 class="tutor_name1">John Doe</h4>
-                                    <span class="time_145">2 hour ago</span>
+                                <div className="rv1458">
+                                    <h4 className="tutor_name1">John Doe</h4>
+                                    <span className="time_145">2 hour ago</span>
                                     <div style={{
                                         position: 'absolute',
                                         right: '0px',

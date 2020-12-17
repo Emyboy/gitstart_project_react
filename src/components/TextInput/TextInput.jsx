@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap'
 // import { func, string, object } from 'prop-types'
+import { string, bool, func, object } from 'prop-types';
 
 const TextInput = ({
     className,
@@ -38,8 +39,20 @@ const TextInput = ({
     )
 }
 
-// TextInput.propType = {
-//     onChange: func
-// }
+TextInput.propType = {
+    className: string,
+    placeholder: string,
+    onChange: func.isRequired,
+    disabled: bool,
+    id: string,
+    type: string,
+    name: string,
+    title: string,
+    value: string,
+    required: bool,
+    label: string,
+    maxlength: string,
+    error: string
+}
 
 export default TextInput;

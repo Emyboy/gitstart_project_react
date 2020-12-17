@@ -29,7 +29,7 @@ export const Post = () => {
                         left: '80px',
                         zIndex: '10',
                         height: '450px'
-                    }} /> : null
+                    }} alt="" /> : null
                 }
                 <div className="review_usr_dt">
                     <img src="images/left-imgs/img-1.jpg" alt="" />
@@ -81,9 +81,9 @@ export const Post = () => {
                         <EachReply />
                         <EachReply />
                         <hr />
-                        <div class="review_usr_dt bg-white">
+                        <div className="review_usr_dt bg-white">
                             <img src="images/left-imgs/img-1.jpg" alt="" />
-                            <div class="rv1458 w-100">
+                            <div className="rv1458 w-100">
                                 {/* <input type="text" className="form-control mt-2" placeholder="Post a comment" /> */}
                                 <TextArea
                                     onChange={e => { }}

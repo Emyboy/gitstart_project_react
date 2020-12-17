@@ -1,7 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-export default function EachReply({
-    type
+function EachReply({
+    type,
+    data,
+    auth
 }) {
     return (
         <>
@@ -23,3 +26,12 @@ export default function EachReply({
         </>
     )
 }
+
+const mapStateToProps = state => ({
+    auth: state.auth
+})
+
+export default connect(
+    mapStateToProps
+)(EachReply);
+
